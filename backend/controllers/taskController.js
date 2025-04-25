@@ -8,7 +8,6 @@ export const getTasks = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-
 export const createTask = async (req, res) => {
   try {
     const { title } = req.body;
@@ -19,7 +18,6 @@ export const createTask = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-
 export const updateTask = async (req, res) => {
   try {
     const { id } = req.params;
@@ -29,7 +27,6 @@ export const updateTask = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-
 export const deleteTask = async (req, res) => {
   try {
     const { id } = req.params;
