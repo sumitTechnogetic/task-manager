@@ -4,16 +4,16 @@ import { FiPlus } from 'react-icons/fi';
 
 function TaskForm({ fetchTasks }) {
   const [title, setTitle] = useState('');
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!title.trim()) return;
+    if (!title.trim()) 
+      return
     await axios.post(`${import.meta.env.VITE_BACKEND_URL}/tasks`, { title });
     setTitle('');
     fetchTasks();
   };
-
   return (
+    <>
     <form onSubmit={handleSubmit} className="flex items-center mb-6">
       <input
         type="text"
@@ -26,7 +26,7 @@ function TaskForm({ fetchTasks }) {
         <FiPlus size={20} className="mr-2" /> Add
       </button>
     </form>
+    </>
   );
 }
-
 export default TaskForm;
